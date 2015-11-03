@@ -1,0 +1,10 @@
+<tr>
+	<%=  form_for user do |u|%>
+		<td> <%= u.text_field :email%> </td>
+		<%#= u.fields_for :role_user do |role_user|%>
+			<%#= role_user.select(:role_id, Role.all.collect {|role| [role.role.titleize,role.id]}) %>
+		<%# end %>
+		<td> <%= user.roles.map{|r| r.to_s}.join(', ') %></td>
+		<td> <%= u.submit%> </td>
+	<% end %>	
+</tr>
